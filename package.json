@@ -1,0 +1,25 @@
+{
+  "name": "template-blogspot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "astro dev",
+    "build": "astro build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mzaini30/template-blogspot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mzaini30/template-blogspot/issues"
+  },
+  "homepage": "https://github.com/mzaini30/template-blogspot#readme",
+  "devDependencies": {
+    "astro": "^0.20.12"
+  }
+}
