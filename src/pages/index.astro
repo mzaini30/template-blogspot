@@ -1,5 +1,45 @@
 ---
-const nama = "World"
+import Layout from './__layout.astro'
+import Meta from './_meta.astro'
+const semuaTulisan = Astro.fetchContent('./post/*.md')
 ---
 
-<h1>Hello {nama}</h1>
+<Layout>
+	<Meta slot='head' title='Template Blogspot' description='Dapatkan template berkualitas dengan harga bersahabat' image='https://ogsupa.com/api/v1?title=Template+Blogspot&description=Dapatkan+template+berkualitas+dengan+harga+bersahabat&background_color=%237300b3&font_style=font-sans&left_meta=%40zenia2020&right_meta=templateblogspot.my.id'></Meta>
+	<Fragment slot='body'>
+
+		<div class="header">
+			<h1>Template Blogspot</h1>
+			<h2>Dapatkan template berkualitas dengan harga bersahabat</h2>
+		</div>
+
+		<div class="listnya">
+			{semuaTulisan.map(x => <a href={x.url}>
+				<img src={x.gambar} alt="">
+				<p><strong>{x.judul}</strong> ({x.harga})</p>
+			</a>)}	
+		</div>
+
+	</Fragment>
+</Layout>
+
+<style>
+	.header {
+		@apply bg-violet-700 p-20 m-5 rounded <md:p-5;
+	}
+	.listnya {
+		@apply m-5 mt-0 grid grid-cols-4 gap-3 <md:(grid-cols-1);
+	}
+	.listnya a {
+		@apply rounded overflow-hidden border shadow
+	}
+	.listnya p {
+		@apply p-3
+	}
+	h1 {
+		@apply text-center text-white text-5xl <md:text-2xl;
+	}
+	h2 {
+		@apply text-center text-white pt-5 <md:(text-sm pt-3 italic);
+	}
+</style>

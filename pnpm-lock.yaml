@@ -1,12 +1,20 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@snowpack/plugin-postcss': ^1.4.3
   astro: ^0.20.12
+  postcss-windicss: ^1.0.0
 
 devDependencies:
+  '@snowpack/plugin-postcss': 1.4.3
   astro: 0.20.12
+  postcss-windicss: 1.0.0
 
 packages:
+
+  /@antfu/utils/0.1.7:
+    resolution: {integrity: sha512-XbmXbhrjfxQq+ishOKeUIK1VYxQV0B+ZkAQkz00bxhmQd5izdT0YRSDwkyH/KX46gFVBMd+6anvSDlciUt3L4A==}
+    dev: true
 
   /@astrojs/language-server/0.7.18:
     resolution: {integrity: sha512-BdBtXW7RPm8qfd0I/HX+R60V9kZbT1N/poaTVWnP9TyZtqi7HIWsJZ+rDS5Oys3V94XEKSRlBP/7td1yOU5Jkg==}
@@ -647,6 +655,19 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /@snowpack/plugin-postcss/1.4.3:
+    resolution: {integrity: sha512-RJGYagse6Pi86Bqm8vPukhCwFVa92VIB81qP3PXPQ/ITQy5gVWDYi4oU+r1A6hsEZ9scUNZevfw6ISya+oiMNQ==}
+    peerDependencies:
+      postcss: '*'
+    dependencies:
+      minimatch: 3.0.4
+      normalize-path: 3.0.0
+      postcss-load-config: 3.1.0
+      workerpool: 6.1.5
+    transitivePeerDependencies:
+      - ts-node
+    dev: true
+
   /@snowpack/plugin-postcss/1.4.3_postcss@8.3.9:
     resolution: {integrity: sha512-RJGYagse6Pi86Bqm8vPukhCwFVa92VIB81qP3PXPQ/ITQy5gVWDYi4oU+r1A6hsEZ9scUNZevfw6ISya+oiMNQ==}
     peerDependencies:
@@ -920,6 +941,20 @@ packages:
 
   /@vue/shared/3.2.20:
     resolution: {integrity: sha512-FbpX+hD5BvXCQerEYO7jtAGHlhAkhTQ4KIV73kmLWNlawWhTiVuQxizgVb0BOkX5oG9cIRZ42EG++d/k/Efp0w==}
+    dev: true
+
+  /@windicss/plugin-utils/0.16.7:
+    resolution: {integrity: sha512-mxgTj/MkemN8JlyfaS20OAJ0BqTUoUlDT9wD/m5U+nUa5SN/r0kPlg1IW9SbmRTrYjNXWEENf9F0Fjb/X4zn6g==}
+    dependencies:
+      '@antfu/utils': 0.1.7
+      debug: 4.3.2
+      fast-glob: 3.2.7
+      jiti: 1.12.9
+      magic-string: 0.25.7
+      micromatch: 4.0.4
+      windicss: 3.1.9
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /abbrev/1.1.1:
@@ -1927,6 +1962,11 @@ packages:
       strip-final-newline: 2.0.0
     dev: true
 
+  /exit-hook/2.2.1:
+    resolution: {integrity: sha512-eNTPlAD67BmP31LDINZ3U7HSF8l57TxOY2PmBJ1shpCvpnxBF93mWCE8YHBnXs8qiUZJc9WDcWIeC3a2HIAMfw==}
+    engines: {node: '>=6'}
+    dev: true
+
   /extend-shallow/2.0.1:
     resolution: {integrity: sha1-Ua99YUrZqfYQ6huvu5idaxxWiQ8=}
     engines: {node: '>=0.10.0'}
@@ -2712,6 +2752,11 @@ packages:
       '@types/node': 16.11.1
       merge-stream: 2.0.0
       supports-color: 7.2.0
+    dev: true
+
+  /jiti/1.12.9:
+    resolution: {integrity: sha512-TdcJywkQtcwLxogc4rSMAi479G2eDPzfW0fLySks7TPhgZZ4s/tM6stnzayIh3gS/db3zExWJyUx4cNWrwAmoQ==}
+    hasBin: true
     dev: true
 
   /js-tokens/4.0.0:
@@ -4106,6 +4151,20 @@ packages:
     resolution: {integrity: sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==}
     dev: true
 
+  /postcss-windicss/1.0.0:
+    resolution: {integrity: sha512-/nerHoHEJHpal9Kxnld+4Sj2Jac1gds9/cNuWEdD0rMVlw5Nl1YcmFkDyU5QJeeRC3tqjTEmpghvfztXLWPjiA==}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      '@windicss/plugin-utils': 0.16.7
+      chokidar: 3.5.2
+      debug: 4.3.2
+      exit-hook: 2.2.1
+      windicss: 3.1.9
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /postcss/6.0.23:
     resolution: {integrity: sha512-soOk1h6J3VMTZtVeVpv15/Hpdl2cBLX3CAw4TAbkpTJiNPk9YP/zWcD1ND+xEtvyuuvKzbxliTOIyvkSeSJ6ag==}
     engines: {node: '>=4.0.0'}
@@ -5492,6 +5551,12 @@ packages:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
       string-width: 1.0.2
+    dev: true
+
+  /windicss/3.1.9:
+    resolution: {integrity: sha512-5YoKvXeCQXIdwc91BoOgpKbIImr2JS8I14rPMa/5dKDDPA4ot3NgICWKELkml39R/8rn4Q0BVUUTqN+w+hjDSA==}
+    engines: {node: '>= 12'}
+    hasBin: true
     dev: true
 
   /workerpool/6.1.5:

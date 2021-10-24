@@ -1,0 +1,68 @@
+---
+import Layout from '../__layout.astro'
+import Meta from '../_meta.astro'
+const {content} = Astro.props
+---
+
+<Layout>
+	<Meta slot='head' title={content.judul} description={`Beli template ${content.judul} seharga ${content.harga}`} image={content.gambar}></Meta>
+
+	<Fragment slot='body'>
+		<div class="header">
+			<h1>{content.judul}</h1>
+		</div>
+
+		<div class="isi">
+			<img src={content.gambar} alt="">
+			<p class='beli'>
+				<a href={content.link}>Beli {content.harga}</a>
+				<a href={content.demo} target='_blank'>Demo</a>
+			</p>
+			<slot></slot>
+			<p class='beli'>
+				<a href={content.link}>Beli {content.harga}</a>
+				<a href={content.demo} target='_blank'>Demo</a>
+			</p>
+		</div>
+
+		<a class="footer" href='/'>Lihat template lainnya</a>
+	</Fragment>
+</Layout>
+
+<style>
+	.header,
+	.footer {
+		@apply bg-violet-700 text-white p-10 px-[20%] <md:px-[10%] block;
+	}
+	.footer {
+		@apply py-5 text-center
+	}
+	h1 {
+		@apply text-3xl
+	}
+	.isi {
+		@apply p-10 px-[20%] <md:px-[10%]
+	}
+	.isi :global(img),
+	.isi :global(p),
+	.isi :global(h1),
+	.isi :global(h2),
+	.isi :global(h3),
+	.isi :global(h4),
+	.isi :global(h5),
+	.isi :global(h6) {
+		@apply mb-5
+	}
+	.isi :global(h2){
+		@apply font-bold text-3xl
+	}
+	:global(img){
+		@apply max-w-full block mx-auto rounded border
+	}
+	.beli {
+		@apply grid grid-cols-2 gap-5 <md:grid-cols-1;
+	}
+	.beli a {
+		@apply text-center outline outline-violet-500 px-5 py-2 hover:bg-violet-200 block rounded text-violet-700 text-3xl
+	}
+</style>

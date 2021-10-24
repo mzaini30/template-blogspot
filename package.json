@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/mzaini30/template-blogspot#readme",
   "devDependencies": {
-    "astro": "^0.20.12"
+    "@snowpack/plugin-postcss": "^1.4.3",
+    "astro": "^0.20.12",
+    "postcss-windicss": "^1.0.0"
   }
 }
